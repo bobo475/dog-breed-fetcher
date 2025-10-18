@@ -2,6 +2,8 @@ package dogapi;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
@@ -22,7 +24,7 @@ class MainTest {
 
     @Test
     void exceptionTypeTest() {
-        Exception bfe = new BreedFetcher.BreedNotFoundException("hound", e);
+        Exception bfe = new BreedFetcher.BreedNotFoundException("hound", new IOException("cause"));
         assertTrue(bfe instanceof Exception && !(bfe instanceof RuntimeException),
                 "BreedFetcher.BreedNotFoundException must be a checked exception.");
     }
