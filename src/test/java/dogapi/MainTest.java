@@ -22,7 +22,7 @@ class MainTest {
 
     @Test
     void exceptionTypeTest() {
-        Exception bfe = new BreedFetcher.BreedNotFoundException("hound");
+        Exception bfe = new BreedFetcher.BreedNotFoundException("hound", e);
         assertTrue(bfe instanceof Exception && !(bfe instanceof RuntimeException),
                 "BreedFetcher.BreedNotFoundException must be a checked exception.");
     }
